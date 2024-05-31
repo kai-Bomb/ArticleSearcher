@@ -23,6 +23,7 @@ struct ArticleListView: View {
             .listStyle(InsetListStyle())
             .fullScreenCover(item: $article) { item in
                 SafariView(url: URL(string: item.url)!)
+                    .ignoresSafeArea()
             }
         }
 }

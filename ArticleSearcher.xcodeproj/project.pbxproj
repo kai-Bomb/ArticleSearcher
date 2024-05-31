@@ -22,10 +22,16 @@
 		8BE70CA62C04332400D6E18F /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CA52C04332400D6E18F /* ListRow.swift */; };
 		8BE70CA82C04333600D6E18F /* ViewFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CA72C04333600D6E18F /* ViewFlow.swift */; };
 		8BE70CAB2C04355900D6E18F /* ArticleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CAA2C04355900D6E18F /* ArticleConfig.swift */; };
-		8BE70CAE2C04358600D6E18F /* QiitaAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CAD2C04358600D6E18F /* QiitaAPIError.swift */; };
-		8BE70CB22C0435AB00D6E18F /* QiitaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CB12C0435AB00D6E18F /* QiitaAPIClient.swift */; };
-		8BE70CB92C0476CB00D6E18F /* QiitaAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CB82C0476CB00D6E18F /* QiitaAPIProtocol.swift */; };
-		8BE70CBA2C0476CB00D6E18F /* QiitaAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CB82C0476CB00D6E18F /* QiitaAPIProtocol.swift */; };
+		8BE70CAE2C04358600D6E18F /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CAD2C04358600D6E18F /* APIError.swift */; };
+		8BE70CB22C0435AB00D6E18F /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CB12C0435AB00D6E18F /* APIRepository.swift */; };
+		8BE70CB92C0476CB00D6E18F /* APIRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CB82C0476CB00D6E18F /* APIRepositoryProtocol.swift */; };
+		8BE70CBA2C0476CB00D6E18F /* APIRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CB82C0476CB00D6E18F /* APIRepositoryProtocol.swift */; };
+		8BF327002C0A147A00C576AA /* ArticleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CAA2C04355900D6E18F /* ArticleConfig.swift */; };
+		8BF327022C0A149800C576AA /* MockAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF327012C0A149800C576AA /* MockAPIRepository.swift */; };
+		8BF327032C0A158800C576AA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CAD2C04358600D6E18F /* APIError.swift */; };
+		8BF327042C0A158900C576AA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CAD2C04358600D6E18F /* APIError.swift */; };
+		8BF327052C0A195600C576AA /* ViewFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CA72C04333600D6E18F /* ViewFlow.swift */; };
+		8BF327062C0A197B00C576AA /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CB12C0435AB00D6E18F /* APIRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,9 +68,10 @@
 		8BE70CA52C04332400D6E18F /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
 		8BE70CA72C04333600D6E18F /* ViewFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFlow.swift; sourceTree = "<group>"; };
 		8BE70CAA2C04355900D6E18F /* ArticleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleConfig.swift; sourceTree = "<group>"; };
-		8BE70CAD2C04358600D6E18F /* QiitaAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPIError.swift; sourceTree = "<group>"; };
-		8BE70CB12C0435AB00D6E18F /* QiitaAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPIClient.swift; sourceTree = "<group>"; };
-		8BE70CB82C0476CB00D6E18F /* QiitaAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPIProtocol.swift; sourceTree = "<group>"; };
+		8BE70CAD2C04358600D6E18F /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		8BE70CB12C0435AB00D6E18F /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
+		8BE70CB82C0476CB00D6E18F /* APIRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepositoryProtocol.swift; sourceTree = "<group>"; };
+		8BF327012C0A149800C576AA /* MockAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				8BE70C862C04320200D6E18F /* ArticleSearcherTests.swift */,
+				8BF327012C0A149800C576AA /* MockAPIRepository.swift */,
 			);
 			path = ArticleSearcherTests;
 			sourceTree = "<group>";
@@ -165,7 +173,7 @@
 		8BE70CA12C0432D300D6E18F /* Error */ = {
 			isa = PBXGroup;
 			children = (
-				8BE70CAD2C04358600D6E18F /* QiitaAPIError.swift */,
+				8BE70CAD2C04358600D6E18F /* APIError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -182,8 +190,8 @@
 		8BE70CAC2C04357300D6E18F /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				8BE70CB82C0476CB00D6E18F /* QiitaAPIProtocol.swift */,
-				8BE70CB12C0435AB00D6E18F /* QiitaAPIClient.swift */,
+				8BE70CB82C0476CB00D6E18F /* APIRepositoryProtocol.swift */,
+				8BE70CB12C0435AB00D6E18F /* APIRepository.swift */,
 				8B18D4272C047FC700EA3F6B /* Article.swift */,
 			);
 			path = Repository;
@@ -323,12 +331,12 @@
 				8B18D42B2C048B1A00EA3F6B /* SafariView.swift in Sources */,
 				8BE70C782C04320000D6E18F /* HomeView.swift in Sources */,
 				8BE70CAB2C04355900D6E18F /* ArticleConfig.swift in Sources */,
-				8BE70CB92C0476CB00D6E18F /* QiitaAPIProtocol.swift in Sources */,
+				8BE70CB92C0476CB00D6E18F /* APIRepositoryProtocol.swift in Sources */,
 				8B18D4282C047FC700EA3F6B /* Article.swift in Sources */,
-				8BE70CB22C0435AB00D6E18F /* QiitaAPIClient.swift in Sources */,
+				8BE70CB22C0435AB00D6E18F /* APIRepository.swift in Sources */,
 				8BE70CA82C04333600D6E18F /* ViewFlow.swift in Sources */,
 				8BE70CA32C04331100D6E18F /* ArticleListView.swift in Sources */,
-				8BE70CAE2C04358600D6E18F /* QiitaAPIError.swift in Sources */,
+				8BE70CAE2C04358600D6E18F /* APIError.swift in Sources */,
 				8BE70C762C04320000D6E18F /* ArticleSearcherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,8 +347,13 @@
 			files = (
 				8B18D42C2C048B1A00EA3F6B /* SafariView.swift in Sources */,
 				8BE70C872C04320200D6E18F /* ArticleSearcherTests.swift in Sources */,
-				8BE70CBA2C0476CB00D6E18F /* QiitaAPIProtocol.swift in Sources */,
+				8BF327022C0A149800C576AA /* MockAPIRepository.swift in Sources */,
+				8BF327002C0A147A00C576AA /* ArticleConfig.swift in Sources */,
+				8BF327052C0A195600C576AA /* ViewFlow.swift in Sources */,
+				8BE70CBA2C0476CB00D6E18F /* APIRepositoryProtocol.swift in Sources */,
 				8B18D4292C047FC700EA3F6B /* Article.swift in Sources */,
+				8BF327032C0A158800C576AA /* APIError.swift in Sources */,
+				8BF327062C0A197B00C576AA /* APIRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF327042C0A158900C576AA /* APIError.swift in Sources */,
 				8BE70C932C04320200D6E18F /* ArticleSearcherUITestsLaunchTests.swift in Sources */,
 				8BE70C912C04320200D6E18F /* ArticleSearcherUITests.swift in Sources */,
 			);

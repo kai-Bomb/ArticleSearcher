@@ -7,7 +7,7 @@
 
 import Foundation
 
-class QiitaAPIClient: QiitaAPIProtocol {
+class APIRepository: APIRepositoryProtocol {
     func fetch(query: String) async throws -> [Article] {
         let urlString = "https://qiita.com/api/v2/items?query=\(query)"
         

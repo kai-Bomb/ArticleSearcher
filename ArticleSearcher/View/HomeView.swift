@@ -28,14 +28,21 @@ struct HomeView: View {
                 }
             }
         }
+        .alert(
+            config.errorText,
+            isPresented: $config.isShowErrorAlert,
+            actions: {
+                Button("OK", action: config.didTapCancelButton)
+            }
+        )
     }
     
     var searchBar: some View {
         HStack {
-            TextField("Search Repositories", text: $config.searchText)
+            TextField("keywords", text: $config.searchText)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             Button("cancel") {
-                config.searchText = ""
+                config.didTapCancelButton()
             }
         }
     }

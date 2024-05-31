@@ -12,16 +12,17 @@ class ArticleConfig: ObservableObject {
     @Published var articles: [Article] = []
     @Published var searchText: String = ""
     @Published var viewFlow: ViewFlow = .empty
-    @Published var errorText: String?
+    @Published var errorText: String = ""
+    @Published var isShowErrorAlert = false
+    
     private var cancellables = Set<AnyCancellable>()
+    private let apiRepository: APIRepositoryProtocol
     
-    private let apiClient: QiitaAPIProtocol
-    
-    init(apiClient: QiitaAPIProtocol = QiitaAPIClient()) {
-        self.apiClient = apiClient
+    init(apiRepository: APIRepositoryProtocol = APIRepository()) {
+        self.apiRepository = apiRepository
         
         $searchText
-            .debounce(for: .milliseconds(900), scheduler: RunLoop.main)
+            .debounce(for: .seconds(1), scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { searchText in
                 Task {
@@ -31,25 +32,31 @@ class ArticleConfig: ObservableObject {
             .store(in: &cancellables)
     }
     
+    @MainActor
     private func fetchArticles(query: String) async {
         if query == "" {
             self.viewFlow = .empty
             return
         }
         do {
-            self.viewFlow = .loading
-            let articles = try await apiClient.fetch(query: query)
-            DispatchQueue.main.async {
-                self.articles = articles
-                self.viewFlow = .complete
-            }
+            viewFlow = .loading
+            let articles = try await apiRepository.fetch(query: query)
+            self.articles = articles
+            viewFlow = .complete
         } catch {
             let error = error as? APIError ?? APIError.unknown
-            DispatchQueue.main.async {
-                self.articles = []
-                self.viewFlow = .empty
-                self.errorText = error.title
-            }
+            self.articles = []
+            viewFlow = .empty
+            errorText = error.title
+            isShowErrorAlert = true
         }
+    }
+    
+    func didTapCancelButton() {
+        searchText = ""
+    }
+    
+    func didTapErrorAlertButton() {
+        isShowErrorAlert = false
     }
 }

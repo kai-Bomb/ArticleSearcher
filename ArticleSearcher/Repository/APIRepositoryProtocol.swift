@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol QiitaAPIProtocol {
+protocol APIRepositoryProtocol {
     func fetch(query: String) async throws -> [Article]
 }
