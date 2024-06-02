@@ -21,7 +21,6 @@ final class ArticleSearcherTests: XCTestCase {
     
     func testFetchArticles() async {
         config.searchText = "Swift"
-        sleep(2)
         XCTAssertEqual(config.articles[0].title, "HelloSwift")
     }
     
