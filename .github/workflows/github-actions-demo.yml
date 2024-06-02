@@ -1,4 +1,6 @@
-name: CI
+name: GitHub Actions Demo
+
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 on:
   pull_request:
@@ -13,16 +15,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-
     - name: Set up Xcode
-      run: sudo xcode-select --switch /Applications/Xcode_15.3.0.app  #
+      run: sudo xcode-select --switch /Applications/Xcode_15.3.app
 
     - name: Install dependencies
-      run: bundle install
+      run: echo "No dependencies to install"
 
     - name: Run tests
-      run: xcodebuild test -workspace ArticleSearcher.xcworkspace -scheme ArticleSearcher -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.5.1' | xcpretty
+      run: xcodebuild test -workspace ArticleSearcher.xcworkspace -scheme ArticleSearcher -destination 'platform=iOS Simulator,name=iPhone 14,OS=17.4' | xcpretty
