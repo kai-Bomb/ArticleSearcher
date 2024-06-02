@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var config = ArticleConfig()
+    @ObservedObject var config: ArticleConfig
+    
+    init(config: ArticleConfig = ArticleConfig()) {
+        self.config = config
+    }
     
     var body: some View {
         NavigationStack {
@@ -41,6 +45,7 @@ struct HomeView: View {
         HStack {
             TextField("keywords", text: $config.searchText)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .accessibilityIdentifier("SearchTextField")
             Button("cancel") {
                 config.didTapCancelButton()
             }

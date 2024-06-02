@@ -11,6 +11,11 @@
 		8B18D4292C047FC700EA3F6B /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B18D4272C047FC700EA3F6B /* Article.swift */; };
 		8B18D42B2C048B1A00EA3F6B /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B18D42A2C048B1A00EA3F6B /* SafariView.swift */; };
 		8B18D42C2C048B1A00EA3F6B /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B18D42A2C048B1A00EA3F6B /* SafariView.swift */; };
+		8B6956842C0CADA40003F573 /* MockAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF327012C0A149800C576AA /* MockAPIRepository.swift */; };
+		8B6956852C0CADA50003F573 /* MockAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF327012C0A149800C576AA /* MockAPIRepository.swift */; };
+		8B6956892C0CB0BA0003F573 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B18D4272C047FC700EA3F6B /* Article.swift */; };
+		8B69568A2C0CB0C30003F573 /* APIRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CB82C0476CB00D6E18F /* APIRepositoryProtocol.swift */; };
+		8B69568B2C0CB0C80003F573 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70CB12C0435AB00D6E18F /* APIRepository.swift */; };
 		8BE70C762C04320000D6E18F /* ArticleSearcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70C752C04320000D6E18F /* ArticleSearcherApp.swift */; };
 		8BE70C782C04320000D6E18F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE70C772C04320000D6E18F /* HomeView.swift */; };
 		8BE70C7A2C04320100D6E18F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BE70C792C04320100D6E18F /* Assets.xcassets */; };
@@ -329,6 +334,7 @@
 			files = (
 				8BE70CA62C04332400D6E18F /* ListRow.swift in Sources */,
 				8B18D42B2C048B1A00EA3F6B /* SafariView.swift in Sources */,
+				8B6956842C0CADA40003F573 /* MockAPIRepository.swift in Sources */,
 				8BE70C782C04320000D6E18F /* HomeView.swift in Sources */,
 				8BE70CAB2C04355900D6E18F /* ArticleConfig.swift in Sources */,
 				8BE70CB92C0476CB00D6E18F /* APIRepositoryProtocol.swift in Sources */,
@@ -361,9 +367,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B69568A2C0CB0C30003F573 /* APIRepositoryProtocol.swift in Sources */,
 				8BF327042C0A158900C576AA /* APIError.swift in Sources */,
 				8BE70C932C04320200D6E18F /* ArticleSearcherUITestsLaunchTests.swift in Sources */,
+				8B69568B2C0CB0C80003F573 /* APIRepository.swift in Sources */,
+				8B6956852C0CADA50003F573 /* MockAPIRepository.swift in Sources */,
 				8BE70C912C04320200D6E18F /* ArticleSearcherUITests.swift in Sources */,
+				8B6956892C0CB0BA0003F573 /* Article.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
