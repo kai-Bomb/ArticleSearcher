@@ -20,7 +20,8 @@ jobs:
       run: sudo xcode-select --switch /Applications/Xcode_15.3.app
 
     - name: Run Unit Tests
-      run: xcodebuild test -project ArticleSearcher.xcodeproj -scheme ArticleSearcher -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=17.4' -only-testing:ArticleSearcherUnitTests | xcpretty
+      run: xcodebuild -project ArticleSearcher.xcodeproj -scheme ArticleSearcher -resultBundlePath TestResults -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.2' '-only-testing:ArticleSearcherTests' test
+
   ui-tests:
     name: Run UI Tests
     runs-on: macos-latest
@@ -33,4 +34,4 @@ jobs:
       run: sudo xcode-select --switch /Applications/Xcode_15.3.app
 
     - name: Run UI Tests
-      run: xcodebuild test -project ArticleSearcher.xcodeproj -scheme ArticleSearcher -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=17.4' -only-testing:ArticleSearcherUITests | xcpretty
+      run: xcodebuild -project ArticleSearcher.xcodeproj -scheme ArticleSearcher -resultBundlePath TestResults -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.2' '-only-testing:ArticleSearcherUITests' test
