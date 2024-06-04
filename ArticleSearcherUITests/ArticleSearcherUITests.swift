@@ -21,7 +21,7 @@ final class ArticleSearcherUITests: XCTestCase {
 
         let alert = app.alerts["レスポンスエラー"]
         XCTAssertTrue(alert.waitForExistence(timeout: 1))
-        XCTAssertEqual(alert.label, "レスポンスエラー")
+        XCTAssertEqual(alert.label, "レスポンスs")
         
         alert.buttons["OK"].tap()
     }
