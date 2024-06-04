@@ -1,0 +1,49 @@
+name: GitHub Actions Demo App
+
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  unit-tests:
+    name: Run Unit Tests
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Xcode
+      run: sudo xcode-select --switch /Applications/Xcode_15.3.app
+
+    - name: Clean Test Results Directory
+      run: rm -rf TestResults
+
+    - name: sw_vers
+      run: sw_vers
+
+    - name: list devices
+      run: xcrun simctl list devices
+
+    - name: Run Unit Tests
+      run: xcodebuild -project ArticleSearcher.xcodeproj -scheme ArticleSearcher -resultBundlePath TestResults -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' '-only-testing:ArticleSearcherTests' test
+  
+  ui-tests:
+    name: Run UI Tests
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Xcode
+      run: sudo xcode-select --switch /Applications/Xcode_15.3.app
+
+    - name: Clean Test Results Directory
+      run: rm -rf TestResults
+
+    - name: Run UI Tests
+      run: xcodebuild -project ArticleSearcher.xcodeproj -scheme ArticleSearcher -resultBundlePath TestResults -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' '-only-testing:ArticleSearcherUITests' test
