@@ -1,9 +1,3 @@
-//
-//  MockAPIRepository.swift
-//  ArticleSearcherTests
-//
-//  Created by 渡邊魁優 on 2024/05/31.
-//
 
 import Foundation
 

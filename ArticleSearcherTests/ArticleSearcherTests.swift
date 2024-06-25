@@ -1,9 +1,3 @@
-//
-//  ArticleSearcherTests.swift
-//  ArticleSearcherTests
-//
-//  Created by 渡邊魁優 on 2024/05/27.
-//
 
 import XCTest
 import Combine
