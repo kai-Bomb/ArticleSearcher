@@ -9,41 +9,18 @@ on:
 
 jobs:
   unit-tests:
-    name: Run Unit Tests
+    name: Run Test On PR
     runs-on: macos-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout
       uses: actions/checkout@v4
 
     - name: Set up Xcode
       run: sudo xcode-select --switch /Applications/Xcode_15.3.app
 
-    - name: Clean Test Results Directory
-      run: rm -rf TestResults
+    - name: Build
+      run: xcodebuild -scheme ArticleSearcher -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4'
 
-    - name: sw_vers
-      run: sw_vers
-
-    - name: list devices
-      run: xcrun simctl list devices
-
-    - name: Run Unit Tests
-      run: xcodebuild -project ArticleSearcher.xcodeproj -scheme ArticleSearcher -resultBundlePath TestResults -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' '-only-testing:ArticleSearcherTests' test
-  
-  ui-tests:
-    name: Run UI Tests
-    runs-on: macos-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Set up Xcode
-      run: sudo xcode-select --switch /Applications/Xcode_15.3.app
-
-    - name: Clean Test Results Directory
-      run: rm -rf TestResults
-
-    - name: Run UI Tests
-      run: xcodebuild -project ArticleSearcher.xcodeproj -scheme ArticleSearcher -resultBundlePath TestResults -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' '-only-testing:ArticleSearcherUITests' test
+    - name: Run Tests
+      run: xcodebuild -scheme ArticleSearcher -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' test
