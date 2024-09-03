@@ -9,7 +9,7 @@ on:
 
 jobs:
   unit-tests:
-    name: Run Test On PR
+    name: Run Test
     runs-on: macos-latest
 
     steps:
